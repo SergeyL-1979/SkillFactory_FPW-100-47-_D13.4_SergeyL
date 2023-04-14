@@ -1,0 +1,5 @@
+celery -A NewsPaper worker -l INFO
+celery -A NewsPaper beat -l INFO
+celery -A NewsPaper flower
+
+docker run -d -p 6379:6379 redis

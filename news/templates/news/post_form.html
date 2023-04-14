@@ -1,0 +1,29 @@
+{% extends 'default.html' %}
+{% load custom_filters %}
+
+{% block title %} CREATE {% endblock %}
+
+{% block content %}
+
+<!--====================================-->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-xl-10 mx-auto">
+            <h2 style="text-align: center;">Заполните форму </h2><br>
+            <form style="text-align: center;" method="post">
+                {% csrf_token %}
+
+                <p><strong> Выберите категорию: {{ form.post_category }} </strong></p>
+                <p><strong> Выберите тип: {{ form.position }}</strong></p>
+                <p><strong>{{ form.headline }}</strong></p>
+                <p><strong>{{ form.post_text }}</strong></p>
+                <input type="submit" value="Создать пост">
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}}
